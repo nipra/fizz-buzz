@@ -46,12 +46,12 @@
 (c/defroutes fizz-buzz-routes
   (c/GET "/fizz-buzz" {params :params}
     (r/response {:result (fizz-buzz (Integer. (:start params))
-                                        (Integer. (:end params)))}))
+                                    (Integer. (:end params)))}))
   (c/GET "/" []
     fizz-buzz-form)
   (c/POST "/" {params :params}
     (r/response {:result (fizz-buzz (Integer. (:start params))
-                                        (Integer. (:end params)))})))
+                                    (Integer. (:end params)))})))
 
 (def handler
   (-> (c/routes fizz-buzz-routes)
